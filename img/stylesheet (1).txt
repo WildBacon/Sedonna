@@ -1,0 +1,74 @@
+.stitches-icon(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+.icon {
+    background-image: url(spritesheet.png);    background-repeat: no-repeat;
+    display: block;
+
+    &.icon-academy {
+        .stitches-icon(-3px, -3px, 27px, 33px);
+    }
+
+    &.icon-academy-blue {
+        .stitches-icon(-36px, -3px, 27px, 33px);
+    }
+
+    &.icon-calendar-blue {
+        .stitches-icon(-69px, -3px, 20px, 22px);
+    }
+
+    &.icon-calendar-icon {
+        .stitches-icon(-69px, -31px, 20px, 22px);
+    }
+
+    &.icon-checked {
+        .stitches-icon(-3px, -59px, 20px, 20px);
+    }
+
+    &.icon-facebook {
+        .stitches-icon(-29px, -59px, 9px, 19px);
+    }
+
+    &.icon-minus-blue {
+        .stitches-icon(-44px, -59px, 11px, 3px);
+    }
+
+    &.icon-minus-icon {
+        .stitches-icon(-61px, -59px, 11px, 3px);
+    }
+
+    &.icon-plus-blue {
+        .stitches-icon(-78px, -59px, 11px, 11px);
+    }
+
+    &.icon-plus-icon {
+        .stitches-icon(-44px, -76px, 11px, 11px);
+    }
+
+    &.icon-star {
+        .stitches-icon(-61px, -76px, 18px, 17px);
+    }
+
+    &.icon-studio {
+        .stitches-icon(-95px, -3px, 27px, 30px);
+    }
+
+    &.icon-studio-blue {
+        .stitches-icon(-95px, -39px, 27px, 30px);
+    }
+
+    &.icon-twitter-icon {
+        .stitches-icon(-95px, -75px, 19px, 15px);
+    }
+
+    &.icon-unchecked {
+        .stitches-icon(-3px, -96px, 20px, 20px);
+    }
+
+    &.icon-youtube-icon {
+        .stitches-icon(-29px, -96px, 20px, 14px);
+    }
+}

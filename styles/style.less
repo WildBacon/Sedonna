@@ -1,6 +1,19 @@
+//Переменные и шаблоны
 @blue: #81b3d2;
+@grey: #eeeeee;
+@light-text: #333333;
 
-//Базовые стили
+.inline-block {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
 h1,h2,h3,h4,h5,h6,p {
   padding: 0;
   margin: 0;
@@ -17,14 +30,12 @@ ul,li {
   list-style: none;
 }
 
-.inline-block {
-  display: inline-block;
-  vertical-align: top;
-}
-
-
+//Body & Wrapper
 body {
-  font-family: 'PT Sans', 'Arial', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
   background: #f2f2f2;
 }
 
@@ -50,10 +61,10 @@ body {
   
   &__link {
     font-size: 14px;
-    line-height: 26px;
+    font-weight: 700;
     color: #000;
-    text-transform: uppercase;
     display: inline-block;
+    padding: 15px 0px;
     
     &_blazon {
       position: relative;
@@ -62,11 +73,13 @@ body {
         position: absolute;
         top: 0;
         left: -69px;
+        z-index: 1;
       }
     }
   }
 }
 
+//Welcome-block
 .welcome-block {
   
 }
@@ -74,6 +87,7 @@ body {
 .main-pic {
   width: 100%;
   height: 508px;
+  padding-top: 75px;
   background: #e3f0f8 url('../img/background.jpg');
   background-size: cover;
   position: relative;
@@ -96,16 +110,64 @@ body {
 .headline {
   width: 500px;
   margin: 0 auto;
+  text-align: center;
+  padding: 60px 0 50px;
+  
+  &__header {
+    font-size: 21px;
+  }
+  &__text {
+    font-size: 14px;
+  }
 }
 
+//Основное содержание страницы
 .content {
   font-size: 0;
 }
 
 .reason {
-  font-size: 16px;
+  text-align: center;
   width: 33.3333%;
+  height: 256px;
+  padding: 50px 0 55px;
+  box-sizing: border-box;
   .inline-block;
+  
+  &_blue {
+    color: #fff;
+    background: @blue;
+  }
+  
+  &_grey {
+    color: #000;
+    background: @grey;
+  }
+  
+  &__header {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+  
+  &__number {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 20px;
+    
+    &_light {
+      color: @light-text;
+    }
+  }
+  
+  &__text {
+    font-size: 14px;
+    line-height: 21px;
+    padding: 0 17.5%;
+    
+    &_light {
+      color: @light-text;
+    }
+  }
 }
 
 .reason-pic {
@@ -120,55 +182,206 @@ body {
 }
 
 .feature {
-  font-size: 16px;
+  text-align: center;
   width: 33.3333%;
+  height: 330px;
+  padding: 160px 0 82px;
+  box-sizing: border-box;
   .inline-block;
+  position: relative;
+  
+  
+  &__header {
+    font-size: 21px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 25px;
+  }
+  
+  &__text {
+    font-size: 14px;
+    line-height: 21px;
+    color: @light-text;
+    padding: 0 17.5%;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+    background-image: url(../img/feature-sprite.png);
+    background-repeat: no-repeat;
+    
+}
+  &_motel::before {
+    .sprite(-83px, -3px, 75px, 72px);
+  }
+  &_burger::before {
+    .sprite(-3px, -3px, 74px, 70px);
+  }
+  &_souvenir::before {
+    .sprite(-3px, -81px, 64px, 76px);
+  }
 }
 
+//Блок поиска гостиницы
 .search {
   
 }
 
 .hotel {
-  width: 500px;
   margin: 0 auto;
+  text-align: center;
   
   &__header {
+    font-size: 30px;
+    line-height: 30px;
+    margin: 55px 0 28px;
   }
   
   &__text {
+    font-size: 14px;
+    line-height: 24px;
+    line-height: 24px;
+    color: @light-text;
+    width: 450px;
+    margin: 0 auto 45px;
   }
   
   &__button {
+    font-size: 21px;
+    line-height: 26px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    padding: 30px 0;
+    width: 568px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: #766357;
+    
   }
 }
 
+//Карта
 .map {
-
+  height: 475px;
+  background: #37ca9f;
 }
 
+//Footer
 .main-footer {
   font-size: 0;
+  padding: 35px 0;
 }
 
 .visit {
-  font-size: 16px;
   width: 33.3333%;
   .inline-block;
+  text-align: center;
+  
+  &__link {
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #000; 
+    display: block;
+    padding: 11px 0;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .social {
-  font-size: 16px;
   width: 33.3333%;
   .inline-block;
+  text-align: center;
+  
+  &__item {
+    .inline-block;
+    font-size: 0;
+    background: @blue;
+    width: 46px;
+    height: 48px;
+    margin-right: 6px;
+    position: relative;
+    
+    &:last-child {
+      
+    margin-right: 0px;
+    }
+    
+    &::before {
+    content: '2';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    
+    background-image: url(../img/small-icon.png);
+    background-repeat: no-repeat;
+    }
+    
+    &_tw::before {
+      .sprite(-95px, -75px, 19px, 15px);
+    }
+    
+    &_fb::before {
+      .sprite(-29px, -59px, 9px, 19px);
+    }
+    
+    &_yt::before {
+      .sprite(-29px, -96px, 20px, 14px);
+    }
+  }
 }
 
 .copyright {
-  font-size: 16px;
   width: 33.3333%;
   .inline-block;
+  text-align: center;
+  
+  &__item {
+    font-size: 16px;
+    line-height: 26px;
+    color: #000;
+    .inline-block;
+    padding: 11px 52px 11px 0;
+    position: relative;
+    
+    &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 12px;
+    margin: auto;
+      
+    background-image: url(../img/small-icon.png);
+    background-repeat: no-repeat;
+    }
+    
+    &_studio::before {
+      .sprite(-95px, -3px, 27px, 30px);
+    }
+    
+    &_academy::before {
+      .sprite(-3px, -3px, 27px, 33px);
+    }
+  }
 }
-//Modal
+
+//Modal-content
 .modal {
   display: none;
 }

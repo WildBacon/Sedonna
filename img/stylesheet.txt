@@ -1,0 +1,22 @@
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+.sprite {
+    background-image: url(spritesheet.png);    background-repeat: no-repeat;
+    display: block;
+
+    &.sprite-burger {
+        .stitches-sprite(-3px, -3px, 74px, 70px);
+    }
+
+    &.sprite-motel {
+        .stitches-sprite(-83px, -3px, 75px, 72px);
+    }
+
+    &.sprite-souvenir {
+        .stitches-sprite(-3px, -81px, 64px, 76px);
+    }
+}
