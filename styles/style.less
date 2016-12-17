@@ -1,3 +1,5 @@
+@blue: #81b3d2;
+
 //Базовые стили
 h1,h2,h3,h4,h5,h6,p {
   padding: 0;
@@ -15,4 +17,158 @@ ul,li {
   list-style: none;
 }
 
+.inline-block {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+body {
+  font-family: 'PT Sans', 'Arial', sans-serif;
+  background: #f2f2f2;
+}
+
+.wrapper {
+  max-width: 1200px;
+  min-width: 768px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 5px 25px 0px rgba(0,0,0,.3);
+  
+}
+
 //Header
+.main-nav {
+  font-size: 0;
+  
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    text-align: center;
+  }
+  
+  &__link {
+    font-size: 14px;
+    line-height: 26px;
+    color: #000;
+    text-transform: uppercase;
+    display: inline-block;
+    
+    &_blazon {
+      position: relative;
+      
+      & img {
+        position: absolute;
+        top: 0;
+        left: -69px;
+      }
+    }
+  }
+}
+
+.welcome-block {
+  
+}
+
+.main-pic {
+  width: 100%;
+  height: 508px;
+  background: #e3f0f8 url('../img/background.jpg');
+  background-size: cover;
+  position: relative;
+  
+  &__inscription {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  &__mask {
+    vertical-align: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 57px;
+  }
+}
+
+.headline {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.content {
+  font-size: 0;
+}
+
+.reason {
+  font-size: 16px;
+  width: 33.3333%;
+  .inline-block;
+}
+
+.reason-pic {
+  width: 66.6666%;
+  height: 256px;
+  overflow: hidden;
+  .inline-block;
+  
+  &__img {
+    width: 100%
+  }
+}
+
+.feature {
+  font-size: 16px;
+  width: 33.3333%;
+  .inline-block;
+}
+
+.search {
+  
+}
+
+.hotel {
+  width: 500px;
+  margin: 0 auto;
+  
+  &__header {
+  }
+  
+  &__text {
+  }
+  
+  &__button {
+  }
+}
+
+.map {
+
+}
+
+.main-footer {
+  font-size: 0;
+}
+
+.visit {
+  font-size: 16px;
+  width: 33.3333%;
+  .inline-block;
+}
+
+.social {
+  font-size: 16px;
+  width: 33.3333%;
+  .inline-block;
+}
+
+.copyright {
+  font-size: 16px;
+  width: 33.3333%;
+  .inline-block;
+}
+//Modal
+.modal {
+  display: none;
+}
