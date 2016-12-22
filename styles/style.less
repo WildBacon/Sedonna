@@ -20,6 +20,17 @@ h1,h2,h3,h4,h5,h6,p {
   cursor: default;
 }
 
+.modal-text {
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -65,6 +76,14 @@ body {
     color: #000;
     display: inline-block;
     padding: 15px 0px;
+    
+    &:hover {
+      color: @blue;
+    }
+    &:active {
+      color: #000;
+      opacity: .3;
+    }
     
     &_blazon {
       position: relative;
@@ -231,7 +250,7 @@ body {
 
 //Блок поиска гостиницы
 .search {
-  
+  position: relative;
 }
 
 .hotel {
@@ -271,8 +290,11 @@ body {
 
 //Карта
 .map {
-  height: 475px;
-  background: #37ca9f;
+  height: 575px;
+  width: 100%;
+  background-image: url(../img/map.jpg);
+  background-size: cover;
+  //футер полупрозрачный
 }
 
 //Footer
@@ -297,6 +319,9 @@ body {
     &:hover {
       text-decoration: underline;
     }
+    &:active {
+      opacity: .3;
+    }
   }
 }
 
@@ -314,8 +339,14 @@ body {
     margin-right: 6px;
     position: relative;
     
+    &:hover {
+      background: #669ec0;
+    }
+    &:active {
+      background: #5496bd;
+    }
+    
     &:last-child {
-      
     margin-right: 0px;
     }
     
@@ -331,6 +362,10 @@ body {
     
     background-image: url(../img/small-icon.png);
     background-repeat: no-repeat;
+    }
+    
+    &:active::before {
+      opacity: .3;
     }
     
     &_tw::before {
@@ -360,6 +395,10 @@ body {
     padding: 11px 52px 11px 0;
     position: relative;
     
+    &:hover {
+      text-decoration: underline;
+    }
+    
     &::before {
     content: '';
     display: block;
@@ -374,14 +413,88 @@ body {
     &_studio::before {
       .sprite(-95px, -3px, 27px, 30px);
     }
+    &_studio:hover::before {
+      .sprite(-95px, -39px, 27px, 30px)
+    }
     
     &_academy::before {
       .sprite(-3px, -3px, 27px, 33px);
+    }
+    &_academy:hover::before {
+      .sprite(-36px, -3px, 27px, 33px)
+    } 
+    &:active::before {
+      opacity: .3;
     }
   }
 }
 
 //Modal-content
 .modal {
+  font-size: 0;
+  line-height: 26px;
   display: none;
+  background: #fff;
+  width: 568px;
+  padding: 55px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  
+  &_show {
+    display: block;
+  }
+  
+  &__label {
+    .modal-text;
+    .inline-block;
+    width: 112px;
+    padding: 5.5px 0;
+    box-sizing: border-box;
+  }
+  
+  &__date {
+    .modal-text;
+    .inline-block;
+    width: 346px;
+    padding: 5.5px 15px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    
+  }
+  
+  &__number {
+    .modal-text;
+    .inline-block;
+    width: 38px;
+    padding: 5.5px 15px;
+    margin-bottom: 55px;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    
+ 
+  }
+  
+  &__submit {
+    .modal-text;
+    font-size: 21px;
+    color: #fff;
+    display: block;
+    padding: 16px 0;
+    width: 458px;
+    box-sizing: border-box;
+    background: @blue;
+    
+    &:hover {
+      background: #669ec0;
+    }
+    &:active {
+      color: #94b9d2;
+      background: #5496bd;
+    }
+  }
+  
 }
