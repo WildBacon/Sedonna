@@ -121,19 +121,28 @@
       
       <div class="modal modal_show">
         <form action="url" method="get">
-          <label class="modal__label" for="date-in">Дата въезда</label>
+         
+          <label class="modal__label" for="date-in">Дата въезда
+           </label>
             <input class="modal__date" type="text"  id="date-in" name="" value="24 июня 2017">
+            <a href="#" class="modal__calendar"></a>
             
-          <label class="modal__label" for="date-out">Дата выезда</label>
+          <label class="modal__label" for="date-out">Дата выезда
+           </label>
             <input class="modal__date" type="text"  id="date-out" name="" value="4 июля 2017">
+            <a href="#" class="modal__calendar"></a>
             
           <label class="modal__label" for="adults">Взрослые</label>
+            <a class="modal__control modal__control_minus" href="#"></a>
             <input class="modal__number" type="text"  id="adults" name="" value="0">
+            <a class="modal__control modal__control_plus" href="#"></a>
             
-          <label class="modal__label" for="children">Дети</label>
+          <label class="modal__label modal__label_children" for="children">Дети</label>
+            <a class="modal__control modal__control_minus" href="#"></a>
             <input class="modal__number" type="text"  id="children" name="" value="0">
-          
-            <input class="modal__submit" type="submit" value="Найти">
+            <a class="modal__control modal__control_plus" href="#"></a>
+            
+          <input class="modal__submit" type="submit" value="Найти">
         </form>
       </div>
       
@@ -161,5 +170,6 @@
     </footer>
   
   </div>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
