@@ -52,7 +52,7 @@ body {
 
 .wrapper {
   max-width: 1200px;
-  min-width: 768px;
+  min-width: 320px;
   margin: 0 auto;
   background: #fff;
   box-shadow: 0 5px 25px 0px rgba(0,0,0,.3);
@@ -589,5 +589,183 @@ body {
       background: #5496bd;
     }
   }
-  
 }
+
+
+//MEDIA QUERIES
+@media screen and (max-width: 768px) {
+  .main-nav {
+    
+    &__item {
+      display: block; 
+      width: 100%;
+    }
+    
+    &__link {
+      width: 100%;
+      background: darken(@blue, 10%);
+      color: white;
+      position: relative;
+    
+      &:hover {
+        background: lighten(@blue, 10%);
+        color: #000;
+      }
+    
+      &_blazon {
+        display: none;
+      }
+      
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        margin: auto;
+        width: 10%;
+        background: lighten(@blue, 10%);
+      }
+      
+      &_last {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  
+  .main-pic {
+    height: 350px;
+    padding-top: 20px;
+      
+    &__inscription {
+      width: 350px;
+    }
+  }
+  
+  .headline {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    
+    &__header {
+      padding: 20px;
+    }
+  }
+  
+  .reason {
+    height: 330px;
+    width: 50%;
+    
+    &__header {
+      color: #fff;
+    }
+    &__number {
+      color: #fff;
+    }
+    &__text {
+      color: #fff;
+    }
+    
+    &_grey {
+      background: @blue;
+    }
+  }
+  
+  .feature {
+    width: 50%;
+  }
+  
+  .reason-pic {
+    display: none;
+  }
+  
+  .modal {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .feature {
+    width: 100%;
+    height: 250px;
+    border-bottom: 1px solid @blue;
+    padding: 110px 30px;
+    
+    &::before {
+      top: 50px;
+    }
+  }
+  .reason {
+    width: 100%;
+    height: 250px;
+    border-bottom: 1px solid darken(@blue, 20%);
+  }
+  
+  .map {
+    display: none;
+  }
+  
+  .main-footer {
+    position: relative;
+    bottom: 0;
+    background: #e5e5e5;
+  }
+  
+  .hotel {
+    
+    &__text {
+      width: 100%;
+    }
+    
+    &__button {
+      width: 100%;
+    }
+  }
+  
+  .modal {
+    position: relative;
+    padding: 5%;
+    width: 100%;
+    text-align: center;
+    
+    &__label {
+      width: 100%;
+      display: block;
+      
+      &_children {
+        padding: 6px 0;
+      }
+    }
+    
+    &__date {
+      width: 50%;
+      margin-bottom: 15px;
+    }
+    
+    &__number,
+    &__control {
+      margin-bottom: 0;
+    }
+    
+    &__submit {
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+  
+  .visit {
+    display: block;
+    width: 100%;
+  }
+  .social,
+  .copyright {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
